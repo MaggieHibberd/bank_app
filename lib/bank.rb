@@ -23,7 +23,7 @@ class Bank
   end
 
   def statement 
-    return "#{@header}\n"  + @array.join
+    return "#{@header}\n"  + @array.reverse.join
   end
 
 

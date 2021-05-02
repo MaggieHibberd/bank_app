@@ -9,13 +9,21 @@ describe Bank do
 end
 end
 
-  describe '#deposit' do
-    context 'allows a customer to make a deposit' do 
+describe '#deposit' do
+  context 'allows a customer to make a deposit' do 
     it 'allows you to make a despodit of 10' do 
       bank = Bank.new
       bank.deposit(10)
     #   balance = bank.balance
     expect(bank.balance).to eq 10
     end
+  end
+    it 'allows 3 deposits of 10, 10, & 15 with a resulting balance of 35' do
+      bank = Bank.new
+      bank.deposit(10)
+      bank.deposit(10)
+      bank.deposit(15)
+    expect(bank.balance).to eq 35
     end
+  
 end 

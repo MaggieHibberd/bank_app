@@ -26,13 +26,13 @@ date || credit || debit || balance
 ````
 input                                                                     ||                                 output
 ----------------------------------------------------------------------------------------------------------------------
-Starts with a balance of 0                                                ||                                Balnce = 0
+Starts with a balance of 0                                                  ||                                Balnce = 0
 Deposit 10                                                                ||                              Balance = 10
-Deposit 10, Deposit 10, Deposit 15                                        ||                              Balance = 35
+Deposit 10, Deposit 10, Deposit 15                                          ||                              Balance = 35
 Deposit 1000                                                              ||                            Balance = 1000
-Withdrawl 50 (previous deposit of 100)                                    ||                            Balance = 50
-Withdrawl 500 (previous deposit credit of 1000 & 2000)                    ||                            Balance = 2500
-Starts off with a formated string  'date || credit || debit || balance'   ||      'date || credit || debit || balance'
+Withdrawl 50 (previous deposit of 100)                                      ||                            Balance = 50
+Withdrawl 500 (previous deposit credit of 1000 & 2000)                       ||                            Balance = 2500
+Starts off with a formated string  'date || credit || debit || balance'             ||      'date || credit || debit || balance'
 
 Statement is printed with a header                                        ||      'date || credit || debit || balance'
 

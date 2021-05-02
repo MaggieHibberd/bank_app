@@ -49,3 +49,11 @@ describe '#withdrawl' do
   end 
 end
 
+describe '#error' do
+  context 'throws an error if a customer attempts to withdraw when balance = 0' do
+  it 'throws an error message' do 
+  expect { Bank.new.withdrawl(50,'13/01/2012' ) }.to raise_error('Insufficient funds in your account')
+  end 
+end
+end 
+

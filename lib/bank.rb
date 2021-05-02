@@ -15,6 +15,7 @@ class Bank
   end
 
   def withdrawl(money_out, date)
+    raise 'Insufficient funds in your account' if @balance == 0
     @date = date
     @money_out = money_out
     @balance -= money_out

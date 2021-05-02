@@ -21,4 +21,6 @@ class Bank
     @array << "#{@date} || || #{@money_out} || #{@balance}\n"
   end
 
+
+
 end

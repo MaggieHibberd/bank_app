@@ -11,5 +11,9 @@ class Bank
     @balance += money_in
   end
 
+  def withdrawl(money_out)
+    @balance -= 50
+  end
+
 
 end

@@ -11,11 +11,10 @@ end
 
 describe '#deposit' do
   context 'allows a customer to make a deposit' do
-  it 'allows you to make a despodit of 10' do
+  it 'allows you to make a deposit of 10' do
     bank = Bank.new
     bank.deposit(10)
   expect(bank.balance).to eq 10
-  end
   end
   it 'allows 3 deposits of 10, 10, & 15 with a resulting balance of 35' do
     bank = Bank.new
@@ -29,4 +28,16 @@ describe '#deposit' do
     bank.deposit(1000)
   expect(bank.balance).to eq 1000
   end
+end 
+end
+
+describe '#withdrawl' do
+  context 'allows a customer to make a withdrawl' do
+  it 'allows you to make a withdrawl of 50, with previous deposit of 100. Left with balance of 50' do
+    bank = Bank.new
+    bank.deposit(100)
+    bank.withdrawl(50)
+  expect(bank.balance).to eq 50
+  end
+  end 
 end 

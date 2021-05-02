@@ -5,6 +5,7 @@ class Bank
 
   def initialize
     @balance =  0
+    @header = 'date || credit || debit || balance'
   end
 
   def deposit(money_in)
@@ -13,6 +14,10 @@ class Bank
 
   def withdrawl(money_out)
     @balance -= money_out
+  end
+
+  def statement 
+    @header 
   end
 
 

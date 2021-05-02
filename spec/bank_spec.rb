@@ -47,4 +47,13 @@ describe '#withdrawl' do
   expect(bank.balance).to eq 2500
   end
   end 
+end
+
+describe '#statement' do
+  context 'allows a customer to print a statement' do
+  it 'prints a formated string "date || credit || debit || balance"' do
+  bank = Bank.new
+  expect(bank.statement).to eq 'date || credit || debit || balance'
+  end
+  end
 end 

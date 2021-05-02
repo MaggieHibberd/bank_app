@@ -4,12 +4,15 @@ class Bank
   attr_reader :balance
 
   def initialize
-    @balance =  0
+    @array = []
+    @balance = 0
     @header = 'date || credit || debit || balance'
   end
 
-  def deposit(money_in)
+  def deposit(money_in, date)
+    @date = date
     @balance += money_in
+    @array << "#{@date} || #{@balance} || ||\n"
   end
 
   def withdrawl(money_out)
@@ -17,7 +20,8 @@ class Bank
   end
 
   def statement 
-    @header 
+    return "#{@header}\n"  + @array.join
+
   end
 
 

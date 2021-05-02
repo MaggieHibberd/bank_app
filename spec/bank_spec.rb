@@ -36,14 +36,14 @@ describe '#withdrawl' do
   it 'allows you to make a withdrawl of 50, with previous deposit of 100. Left with balance of 50' do
     bank = Bank.new
     bank.deposit(100, 10/01/2012)
-    bank.withdrawl(50)
+    bank.withdrawl(50, '13/01/2012')
   expect(bank.balance).to eq 50
   end
   it 'allows you to make a withdrawl of 500, with previous balance of 3000. Left with balance of 2500' do
     bank = Bank.new
     bank.deposit(1000, 10/01/2012)
     bank.deposit(2000, 13/01/2012)
-    bank.withdrawl(500)
+    bank.withdrawl(500, '13/01/2012')
   expect(bank.balance).to eq 2500
   end
   end 
@@ -59,7 +59,7 @@ describe '#statement' do
     bank = Bank.new
     bank.deposit(1000, '10/01/2012')
   expect(bank.statement).to include 'date || credit || debit || balance'
-  expect(bank.statement).to include '10/01/2012 || 1000 || ||'
+  expect(bank.statement).to include '10/01/2012 || 1000 || || 1000'
   
   end
   it 'prints a formated string with a statement title, deposit(1000), date 10/01/2012 & deposit(2000), date 13/01/2012 ' do
@@ -67,8 +67,18 @@ describe '#statement' do
     bank.deposit(1000, '10/01/2012')
     bank.deposit(2000, '13/01/2012')
   expect(bank.statement).to include 'date || credit || debit || balance'
-  expect(bank.statement).to include '10/01/2012 || 1000 || ||'
-  expect(bank.statement).to include '13/01/2012 || 3000 || ||'
+  expect(bank.statement).to include '10/01/2012 || 1000 || || 1000'
+  expect(bank.statement).to include '13/01/2012 || 2000 || || 3000'
+  end
+  it 'prints a formated string with a statement title, multiple deposits and a withdrawl' do
+    bank = Bank.new
+    bank.deposit(1000, '10/01/2012')
+    bank.deposit(2000, '13/01/2012')
+    bank.withdrawl(500,'14/01/2012')
+  expect(bank.statement).to include 'date || credit || debit || balance'
+  expect(bank.statement).to include '10/01/2012 || 1000 || || 1000'
+  expect(bank.statement).to include '13/01/2012 || 2000 || || 3000'
+  expect(bank.statement).to include '14/01/2012 || || 500 || 2500'
   end
   end
 end 

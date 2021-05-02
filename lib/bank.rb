@@ -12,16 +12,18 @@ class Bank
   def deposit(money_in, date)
     @date = date
     @balance += money_in
-    @array << "#{@date} || #{@balance} || ||\n"
+    @array << "#{@date} || #{money_in} || #{@money_out}|| #{@balance}\n"
   end
 
-  def withdrawl(money_out)
+  def withdrawl(money_out, date)
+    @date = date
+    @money_out = money_out
     @balance -= money_out
+    @array << "#{@date} || || #{@money_out} || #{@balance}\n"
   end
 
   def statement 
     return "#{@header}\n"  + @array.join
-
   end
 
 

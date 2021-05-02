@@ -1,12 +1,11 @@
 
 class Bank
 
-  attr_reader :balance
+  attr_reader :balance, :array
 
   def initialize
     @array = []
     @balance = 0
-    
   end
 
   def deposit(money_in, date)
@@ -21,10 +20,5 @@ class Bank
     @balance -= money_out
     @array << "#{@date} || || #{@money_out} || #{@balance}\n"
   end
-
-  def statement 
-    return "#{@header}\n"  + @array.reverse.join
-  end
-
 
 end

@@ -6,7 +6,7 @@ class Bank
   def initialize
     @array = []
     @balance = 0
-    @header = 'date || credit || debit || balance'
+    
   end
 
   def deposit(money_in, date)

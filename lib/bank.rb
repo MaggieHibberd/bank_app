@@ -8,8 +8,7 @@ class Bank
   end
 
   def deposit(money_in)
-    money_in > 10 ? @balance += 15 : @balance += 10
-
+    @balance += money_in
   end
 
 

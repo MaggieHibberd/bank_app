@@ -39,5 +39,12 @@ describe '#withdrawl' do
     bank.withdrawl(50)
   expect(bank.balance).to eq 50
   end
+  it 'allows you to make a withdrawl of 500, with previous balance of 3000. Left with balance of 2500' do
+    bank = Bank.new
+    bank.deposit(1000)
+    bank.deposit(2000)
+    bank.withdrawl(500)
+  expect(bank.balance).to eq 2500
+  end
   end 
 end 

@@ -12,7 +12,7 @@ class Bank
   end
 
   def withdrawl(money_out)
-    @balance -= 50
+    @balance -= money_out
   end
 
 

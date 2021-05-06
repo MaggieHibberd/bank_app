@@ -13,20 +13,20 @@ describe '#deposit' do
   context 'allows a customer to make a deposit' do
   it 'allows you to make a deposit of 10' do
     bank = Bank.new
-    bank.deposit(10, 10/01/2012 )
-  expect(bank.balance).to eq 10
+    bank.deposit(10.00, '10/01/2012' )
+  expect(bank.balance).to eq 10.00
   end
   it 'allows 3 deposits of 10, 10, & 15 with a resulting balance of 35' do
     bank = Bank.new
-    bank.deposit(10, 10/01/2012)
-    bank.deposit(10, 10/01/2012)
-    bank.deposit(15, 10/01/2012)
-  expect(bank.balance).to eq 35
+    bank.deposit(10.00, '10/01/2012')
+    bank.deposit(10.00, '10/01/2012')
+    bank.deposit(15.00, '10/01/2012')
+  expect(bank.balance).to eq 35.00
   end
   it 'allows a deposit of 1000, leadind to a balance of 1000' do 
     bank = Bank.new
-    bank.deposit(1000, 10/01/2012)
-  expect(bank.balance).to eq 1000
+    bank.deposit(1000.00, '10/01/2012')
+  expect(bank.balance).to eq 1000.00
   end
 end 
 end
@@ -35,16 +35,16 @@ describe '#withdrawl' do
   context 'allows a customer to make a withdrawl' do
   it 'allows you to make a withdrawl of 50, with previous deposit of 100. Left with balance of 50' do
     bank = Bank.new
-    bank.deposit(100, 10/01/2012)
-    bank.withdrawl(50, '13/01/2012')
-  expect(bank.balance).to eq 50
+    bank.deposit(100.00, '10/01/2012')
+    bank.withdrawl(50.00, '13/01/2012')
+  expect(bank.balance).to eq 50.00
   end
   it 'allows you to make a withdrawl of 500, with previous balance of 3000. Left with balance of 2500' do
     bank = Bank.new
-    bank.deposit(1000, 10/01/2012)
-    bank.deposit(2000, 13/01/2012)
-    bank.withdrawl(500, '13/01/2012')
-  expect(bank.balance).to eq 2500
+    p bank.deposit(1000.00, '10/01/2012')
+    p bank.deposit(2000.00, '13/01/2012')
+    p bank.withdrawl(500.00, '13/01/2012')
+  expect(bank.balance).to eq 2500.00
   end
   end 
 end

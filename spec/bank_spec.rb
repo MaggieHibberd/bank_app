@@ -41,9 +41,9 @@ describe '#withdrawl' do
   end
   it 'allows you to make a withdrawl of 500, with previous balance of 3000. Left with balance of 2500' do
     bank = Bank.new
-    p bank.deposit(1000.00, '10/01/2012')
-    p bank.deposit(2000.00, '13/01/2012')
-    p bank.withdrawl(500.00, '13/01/2012')
+    bank.deposit(1000.00, '10/01/2012')
+    bank.deposit(2000.00, '13/01/2012')
+    bank.withdrawl(500.00, '13/01/2012')
   expect(bank.balance).to eq 2500.00
   end
   end 

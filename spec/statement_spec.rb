@@ -9,27 +9,27 @@ describe '#statement' do
   expect(statement.print_statement).to include 'date || credit || debit || balance'
   end
   it 'prints a formated string with a statement title, deposit(1000) and date 10/01/2012' do
-    bank = instance_double('bank', :header => 'date || credit || debit || balance', :array => ['10/01/2012 || 1000 || || 1000'])
+    bank = instance_double('bank', :header => 'date || credit || debit || balance', :array => ['10/01/2012 || 1000.00 || || 1000.00'])
     statement = Statement.new(bank)
   expect(statement.print_statement).to include 'date || credit || debit || balance'
-  expect(statement.print_statement).to include '10/01/2012 || 1000 || || 1000'
+  expect(statement.print_statement).to include '10/01/2012 || 1000.00 || || 1000.00'
   end
   it 'prints a formated string with a statement title, deposit(1000) and date 10/01/2012' do
-    bank = instance_double('bank', :header => 'date || credit || debit || balance', :array => ['10/01/2012 || 1000 || || 1000', '13/01/2012 || 1000 || || 1000'])
+    bank = instance_double('bank', :header => 'date || credit || debit || balance', :array => ['10/01/2012 || 1000.00 || || 1000.00', '13/01/2012 || 1000.00 || || 1000.00'])
     statement = Statement.new(bank)
   expect(statement.print_statement).to include 'date || credit || debit || balance'
-  expect(statement.print_statement).to include '10/01/2012 || 1000 || || 1000'
-  expect(statement.print_statement).to include '13/01/2012 || 1000 || || 1000'
+  expect(statement.print_statement).to include '10/01/2012 || 1000.00 || || 1000.00'
+  expect(statement.print_statement).to include '13/01/2012 || 1000.00 || || 1000.00'
   end
     it 'prints a formated string with a statement title, multiple deposits and a withdrawl' do
-      bank = instance_double('bank', :header => 'date || credit || debit || balance', :array => ['10/01/2012 || 1000 || || 1000,
-      13/01/2012 || 2000 || || 3000 
-      14/01/2012 || || 500 || 2500'])
+      bank = instance_double('bank', :header => 'date || credit || debit || balance', :array => ['10/01/2012 || 1000.00 || || 1000.00,
+      13/01/2012 || 2000.00 || || 3000.00 
+      14/01/2012 || || 500.00 || 2500.00'])
     statement = Statement.new(bank)
   expect(statement.print_statement).to include 'date || credit || debit || balance'
-  expect(statement.print_statement).to include '14/01/2012 || || 500 || 2500'
-  expect(statement.print_statement).to include '13/01/2012 || 2000 || || 3000'
-  expect(statement.print_statement).to include '10/01/2012 || 1000 || || 1000'
+  expect(statement.print_statement).to include '14/01/2012 || || 500.00 || 2500.00'
+  expect(statement.print_statement).to include '13/01/2012 || 2000.00 || || 3000.00'
+  expect(statement.print_statement).to include '10/01/2012 || 1000.00 || || 1000.00'
   end 
 end
 end

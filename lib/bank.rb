@@ -11,7 +11,7 @@ class Bank
   def deposit(money_in, date)
     @date = date
     @balance += money_in
-    @array << "#{@date} || #{money_in} || #{@money_out}|| #{@balance}\n"
+    @array << "#{@date} || #{'%.2f' % money_in} || #{@money_out}|| #{'%.2f' % @balance}\n"
   end
 
   def withdrawl(money_out, date)
@@ -19,7 +19,7 @@ class Bank
     @date = date
     @money_out = money_out
     @balance -= money_out
-    @array << "#{@date} || || #{@money_out} || #{@balance}\n"
+    @array << "#{@date} || || #{'%.2f' % @money_out} || #{'%.2f' % @balance}\n"
   end
 
 

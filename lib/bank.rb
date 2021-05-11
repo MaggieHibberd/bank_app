@@ -1,17 +1,17 @@
 
 class Bank
 
-  attr_reader :balance, :array
+  attr_reader :balance, :traansactions
 
   def initialize
-    @array = []
+    @transactions = []
     @balance = 0
   end
 
   def deposit(money_in, date)
     @date = date
     @balance += money_in
-    @array << "#{@date} || #{'%.2f' % money_in} || #{@money_out}|| #{'%.2f' % @balance}\n"
+    @transactions << "#{@date} || #{'%.2f' % money_in} || #{@money_out}|| #{'%.2f' % @balance}\n"
   end
 
   def withdrawl(money_out, date)
@@ -19,9 +19,6 @@ class Bank
     @date = date
     @money_out = money_out
     @balance -= money_out
-    @array << "#{@date} || || #{'%.2f' % @money_out} || #{'%.2f' % @balance}\n"
+    @transactions << "#{@date} || || #{'%.2f' % @money_out} || #{'%.2f' % @balance}\n"
   end
-
-
-
 end

@@ -7,6 +7,6 @@ class Statement
   end
 
   def print_statement
-    return "#{@header}\n" + @bank.array.reverse.join
+    return "#{@header}\n" + @bank.transactions.reverse.join
   end
 end

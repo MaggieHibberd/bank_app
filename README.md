@@ -38,11 +38,11 @@ date || credit || debit || balance
 10/01/2012 || 1000.00 || || 1000.00
 ````
 ### Approach
-    Broke the task down into clear user input/output scenarios
-    Used TDD (red, green, refactor) to work through each 
-    Created classes ensuring adherence to the Single Responsibility Principle
-    Ensured tests were isolated from other classes, removing dependencies from spec files
-    Acceptance criteria remained unaltered outside of taking edge cases into consideration
+    - Broke the task down into clear user input/output scenarios
+    - Used TDD (red, green, refactor) to work through each 
+    - Created classes ensuring adherence to the Single Responsibility Principle
+    - Ensured tests were isolated from other classes, removing dependencies from spec files
+    - Acceptance criteria remained unaltered outside of taking edge cases into consideration
 
 ### Example Usage
 ````
@@ -56,7 +56,7 @@ date || credit || debit || balance
 > bank.withdrawal(5)
 
 # print a summary
-> statement = Statement.new
+> statement = Statement.new(bank)
 > statement.print_summary
 ````
 

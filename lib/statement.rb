@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'bank'
 
 class Statement
@@ -7,6 +9,7 @@ class Statement
   end
 
   def print_statement
-    return "#{@header}\n" + @bank.transactions.reverse.join
+    "#{@header}\n" + @bank.transactions.reverse.join
+  
   end
 end

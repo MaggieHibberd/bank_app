@@ -10,6 +10,5 @@ class Statement
 
   def print_statement
     "#{@header}\n" + @bank.transactions.reverse.join
-  
   end
 end

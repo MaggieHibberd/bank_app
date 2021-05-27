@@ -8,13 +8,16 @@ class Bank
     @balance = 0
   end
 
-  def deposit(money_in, date)
+  TODAYS_DATE = Time.now.strftime('%d/%m/%Y')
+
+  def deposit(money_in, date = TODAYS_DATE)
+    
     @date = date
     @balance += money_in
     @transactions << "#{@date} || #{'%.2f' % money_in} || #{@money_out}|| #{format('%.2f', @balance)}\n"
   end
 
-  def withdrawal(money_out, date)
+  def withdrawal(money_out, date = TODAYS_DATE)
     raise 'Insufficient funds in your account' if @balance.zero?
 
     @date = date

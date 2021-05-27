@@ -51,6 +51,18 @@ describe '#withdrawl' do
   end
 end
 
+describe '#default date' do
+  context 'if no date given a default date is provided using Time.now method' do
+    it 'defaults to Time.now as the date if not date provided' do
+      TODAYS_DATE = Time.now.strftime('%d/%m/%Y')
+      bank = Bank.new
+      bank.deposit(100.00)
+      bank.withdrawal(50.00, "#{TODAYS_DATE}")
+      expect(bank.balance).to eq 50.00
+    end
+  end 
+end 
+
 describe '#error' do
   context 'throws an error if a customer attempts to withdraw when balance = 0' do
     it 'throws an error message' do
